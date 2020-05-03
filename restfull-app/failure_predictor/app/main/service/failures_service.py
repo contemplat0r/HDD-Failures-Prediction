@@ -33,9 +33,9 @@ def get_timestamp():
 #        }
 #        return response_object, 409
 
-def save_new_hdd_smart_prediction(prediction):
-    HDDSMARTPrediction.__table__.insert().execute(prediction)
-    #db.engine.execute(HDDSMARTPrediction.__table__.insert(), prediction)
+def save_new_hdd_smart_predictions(predictions):
+    #HDDSMARTPrediction.__table__.insert().execute(predictions)
+    db.engine.execute(HDDSMARTPrediction.__table__.insert(), predictions)
 
 
 def get_all_failure_predictions():

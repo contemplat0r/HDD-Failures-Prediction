@@ -1,0 +1,24 @@
+POST
+[
+{
+  "timestamp": "2020-05-03T18:09:28.855Z",
+  "model": "A",
+  "serial_number": "ABC1",
+  "capacity_bytes": 100000000,
+  "failure": 0,
+  "prediction": 0
+},
+ { "timestamp": "2020-05-03T18:09:28.855Z",
+  "model": "B",
+  "serial_number": "XYZ1",
+  "capacity_bytes": 100000001,
+  "failure": 1,
+  "prediction": 1
+}]
+
+{
+  "errors": {
+    "": "[{'timestamp': '2020-05-03T18:09:28.855Z', 'model': 'A', 'serial_number': 'ABC1', 'capacity_bytes': 100000000, 'failure': 0, 'prediction': 0}, {'timestamp': '2020-05-03T18:09:28.855Z', 'model': 'B', 'serial_number': 'XYZ1', 'capacity_bytes': 100000001, 'failure': 1, 'prediction': 1}] is not of type 'object'"
+  },
+  "message": "Input payload validation failed"
+}
