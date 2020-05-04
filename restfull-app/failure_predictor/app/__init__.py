@@ -3,10 +3,7 @@
 from flask_restplus import Api
 from flask import Blueprint
 
-#from .main.service import failures_service
 from .main.controller.hdd_smart_prediction import api as hdd_smart_prediction_ns
-#from .main.controller import hdd_smaprt_prediction #import api as hdd_smaprt_prediction_ns
-#hdd_smaprt_prediction_ns = hdd_smaprt_prediction_ns.api
 
 blueprint = Blueprint('api', __name__)
 
