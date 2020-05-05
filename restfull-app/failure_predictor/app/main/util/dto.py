@@ -23,18 +23,39 @@ class HDDSMARTPredictionDto:
             {
                 #'timestamp': fields.String(readOnly=True, description='Prediction Timestamp'),
                 'timestamp': fields.DateTime,
-                'model': fields.String(required=True, description='HDD model'),
-                'serial_number': fields.String(required=True, description='HDD serial number'),
-                'capacity_bytes': fields.Integer,
+                'model': fields.String(required=True, description='HDD model', example="XYZ"),
+                'serial_number': fields.String(required=True, description='HDD serial number', example="HD00"),
+                'capacity_bytes': fields.Integer(example=1000000000),
                 'failure': fields.Integer,
                 'prediction': fields.Float
             }
 	)
     
+    prediction_list_example = {
+            "prediction_list": [
+                {
+                    "timestamp": "2020-05-04T18:30:47.588Z",
+                    "model": "XYZ",
+                    "serial_number": "HD00",
+                    "capacity_bytes": 1000000000,
+                    "failure": 0,
+                    "prediction": 0
+                },
+                {
+                    "timestamp": "2020-05-04T18:30:47.588Z",
+                    "model": "UVT",
+                    "serial_number": "00DH",
+                    "capacity_bytes": 1000000001,
+                    "failure": 1,
+                    "prediction": 1
+                }
+
+            ]
+        }
     smart_prediction_list = api.model(
             'SMARTPredictionList',
             {
-                'prediction_list': fields.List(fields.Nested(smart_prediction))
+                'prediction_list': fields.List(fields.Nested(smart_prediction), example=prediction_list_example)
             }
         )
 
